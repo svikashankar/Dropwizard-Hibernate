@@ -1,6 +1,6 @@
 package com.example.resources;
 
-import com.example.core.Person;
+import com.example.entity.Person;
 import com.example.dao.PersonDAO;
 import io.dropwizard.hibernate.UnitOfWork;
 
