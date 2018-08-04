@@ -3,9 +3,11 @@ package com.example;
 import com.example.dao.OrderDAO;
 import com.example.dao.PersonDAO;
 import com.example.dao.PriceDAO;
+import com.example.dao.RegistrationDAO;
 import com.example.resources.OrderResource;
 import com.example.resources.PersonResource;
 import com.example.resources.PriceResource;
+import com.example.resources.RegistrationResource;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.hibernate.HibernateBundle;
@@ -44,23 +46,20 @@ public class ExampleApplication extends Application<ExampleConfiguration> {
 
 
         final PersonResource personResource = new PersonResource(personDAO);
+        environment.jersey().register(personResource);
 
         final PriceDAO priceDAO =new PriceDAO((hibernate.getSessionFactory()));
 
         final PriceResource priceResource = new PriceResource(priceDAO);
+        environment.jersey().register(priceResource);
 
         final OrderDAO orderDAO = new OrderDAO(hibernate.getSessionFactory());
       final OrderResource orderResource = new OrderResource(orderDAO);
-
-//        final TableTest1DAO test1Dao = new TableTest1DAO(hibernate.getSessionFactory());
-//        final TableTest1Resource test1Resource = new TableTest1Resource(test1Dao);
-
-//        final OrderDAO orderDAO =new OrderDAO((hibernate.getSessionFactory()));
-//
-//        final OrderResource orderResource = new OrderResource(orderDAO);
-
-        environment.jersey().register(personResource);
-        environment.jersey().register(priceResource);
         environment.jersey().register(orderResource);
+
+        final RegistrationDAO registrationDAO= new RegistrationDAO(hibernate.getSessionFactory());
+        final RegistrationResource registrationResource=new RegistrationResource(registrationDAO);
+        environment.jersey().register(registrationResource);
+
    }
 }
