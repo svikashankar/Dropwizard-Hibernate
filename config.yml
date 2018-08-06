@@ -22,12 +22,12 @@ database:
   evictionInterval: 10s
   minIdleTime: 1 minute
 
-# logging:
-#   level: INFO
-#   loggers:
-#     com.qonectcoin: DEBUG
-#     org.hibernate.SQL: DEBUG
-#     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-#   appenders:
-#     - type: console
-#       timeZone: JST
+logging:
+ level: INFO
+ loggers:
+   com.qonectcoin: DEBUG
+   org.hibernate.SQL: DEBUG
+   org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+ appenders:
+   - type: console
+     timeZone: JST

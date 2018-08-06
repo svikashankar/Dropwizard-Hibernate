@@ -1,6 +1,6 @@
 package com.example.resources;
 
-import com.example.core.Person;
+import com.example.entity.Person;
 import com.example.core.PersonTests;
 import com.example.dao.PersonDAO;
 import com.sun.jersey.api.client.GenericType;

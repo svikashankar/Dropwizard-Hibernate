@@ -1,5 +1,6 @@
 package com.example.core;
 
+import com.example.entity.Person;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.dropwizard.jackson.Jackson;
 import org.junit.BeforeClass;
