@@ -22,5 +22,17 @@ public class RegistrationDAO extends AbstractDAO<Registration> {
         return persist(registration);
     }
 
+    public Registration findById(int id) {
+        return (Registration) currentSession().get(Registration.class,id);
+    }
+
+    public void delete(Registration registration) {
+        currentSession().delete(registration);
+    }
+
+    public void update(Registration registration){
+        currentSession().saveOrUpdate(registration);
+    }
+
     }
 

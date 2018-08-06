@@ -34,4 +34,22 @@ public class RegistrationResource {
         Registration newOrder = registrationDAO.insert(registration);
         return newOrder;
     }
+
+    @DELETE
+    @Path("/{id}")
+    @UnitOfWork
+    public void delete(@PathParam("id") Integer id, @Valid Registration registration){
+        registrationDAO.delete(registrationDAO.findById(id));
+    }
+
+    @PUT
+    @Path("/{id}")
+    @UnitOfWork
+    public Registration update(@PathParam("id") Integer id, @Valid Registration registration){
+        registration = registration.setId(id);
+        registrationDAO.update(registration);
+        return registration;
+    }
+
+
 }
