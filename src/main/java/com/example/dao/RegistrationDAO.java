@@ -18,5 +18,9 @@ public class RegistrationDAO extends AbstractDAO<Registration> {
             return (List<Registration>) currentSession().createCriteria(Registration.class).list();
         }
 
+    public Registration insert(Registration registration){
+        return persist(registration);
+    }
+
     }
 
