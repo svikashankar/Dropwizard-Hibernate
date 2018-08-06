@@ -37,8 +37,9 @@ public class Registration{
         return id;
     }
 
-    public void setId(Integer id) {
+    public Registration setId(Integer id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
